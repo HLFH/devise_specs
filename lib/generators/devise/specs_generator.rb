@@ -54,17 +54,17 @@ module Devise
       def insert_factory_bot_attributes
         path  = "spec/factories/#{plural_name}.rb"
         attrs = ATTRIBUTES.gsub(/^ {4}/, '')
-        after = "factory :#{singular_name} do"
+        data = "factory :#{singular_name} do"
 
-        insert_into_file path, attrs, after: after
+        create_file path, attrs + data
       end
 
       def insert_fabrication_attributes
         path  = "spec/fabricators/#{singular_name}_fabricator.rb"
         attrs = ATTRIBUTES.gsub(/^ {6}/, '')
-        after = "Fabricator(:#{singular_name}) do"
+        data = "Fabricator(:#{singular_name}) do"
 
-        insert_into_file path, attrs, after: after
+        create_file path, attrs + data
       end
     end
   end
