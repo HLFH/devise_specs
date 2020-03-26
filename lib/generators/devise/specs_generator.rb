@@ -53,8 +53,8 @@ module Devise
 
       def insert_factory_bot_attributes
         path  = "spec/factories/#{plural_name}.rb"
-        attrs = "#{ATTRIBUTES.gsub(/^ {4}/, '')}\nend\nend"
-        data = "FactoryBot.define do\nfactory :#{singular_name} do"
+        attrs = "#{ATTRIBUTES.gsub(/^ {4}/, '')}\n  end\nend"
+        data = "FactoryBot.define do\n  factory :#{singular_name} do"
 
         create_file path, data + attrs
       end
