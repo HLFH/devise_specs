@@ -56,15 +56,15 @@ module Devise
         attrs = ATTRIBUTES.gsub(/^ {4}/, '')
         data = "factory :#{singular_name} do"
 
-        create_file path, attrs + data
+        create_file path, data + attrs
       end
 
       def insert_fabrication_attributes
         path  = "spec/fabricators/#{singular_name}_fabricator.rb"
         attrs = ATTRIBUTES.gsub(/^ {6}/, '')
-        data = "Fabricator(:#{singular_name}) do"
+        after = "Fabricator(:#{singular_name}) do"
 
-        create_file path, attrs + data
+        create_file path, data + attrs
       end
     end
   end
