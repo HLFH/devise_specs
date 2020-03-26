@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name     = 'devise-specs'
   s.version  = '0.0.5'
-  s.authors  = ['Gaspard d'Hautefeuille']
+  s.authors  = ["Gaspard d'Hautefeuille"]
   s.email    = 'github@dhautefeuille.eu'
   s.summary  = 'Generates the Devise acceptance tests.'
   s.homepage = 'https://github.com/HLFH/devise-specs'
