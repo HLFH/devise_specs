@@ -1,10 +1,10 @@
 Gem::Specification.new do |s|
-  s.name     = 'devise-specs'
+  s.name     = 'devise_specs'
   s.version  = '0.0.5'
   s.authors  = ["Gaspard d'Hautefeuille"]
-  s.email    = 'github@dhautefeuille.eu'
+  s.email    = 'ruby@dhautefeuille.eu'
   s.summary  = 'Generates the Devise acceptance tests.'
-  s.homepage = 'https://github.com/HLFH/devise-specs'
+  s.homepage = 'https://github.com/HLFH/devise_specs'
   s.license  = 'MIT'
   s.files    = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(spec|features|fixtures)/}) }
   

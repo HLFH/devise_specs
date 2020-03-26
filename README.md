@@ -1,9 +1,9 @@
-# devise-specs
+# devise_specs
 
-[![Build Status](https://travis-ci.org/andrii/devise-specs.svg?branch=master)](https://travis-ci.org/andrii/devise-specs)
-[![Code Climate](https://codeclimate.com/github/andrii/devise-specs/badges/gpa.svg)](https://codeclimate.com/github/andrii/devise-specs)
+[![Build Status](https://travis-ci.org/andrii/devise_specs.svg?branch=master)](https://travis-ci.org/andrii/devise_specs)
+[![Code Climate](https://codeclimate.com/github/andrii/devise_specs/badges/gpa.svg)](https://codeclimate.com/github/andrii/devise_specs)
 
-devise-specs is a Rails generator that adds the Devise authentication acceptance tests when you run the `devise` generator. The tests are RSpec feature specs containing Factory Bot or Fabrication fixture replacement methods and Capybara actions.
+devise_specs is a Rails generator that adds the Devise authentication acceptance tests when you run the `devise` generator. The tests are RSpec feature specs containing Factory Bot or Fabrication fixture replacement methods and Capybara actions.
 
 Generated feature specs test the following features:
 * Registration
@@ -11,20 +11,20 @@ Generated feature specs test the following features:
 * Logout
 * Password reset
 
-Works with Rails 4 and 5.
+Works with Rails 6+.
 
 ## Installation
 
-Make sure `devise-specs`, `devise`, `rspec-rails`, `capybara` and fixture replacement gems are added to the `Gemfile`:
+Make sure `devise_specs`, `devise`, `rspec-rails`, `capybara` and fixture replacement gems are added to the `Gemfile`:
 ```ruby
 gem 'devise'
 
 group :development do
-  gem 'devise-specs'
+  gem 'devise_specs'
 end
 
 group :test do
-  gem 'capybara' # already present in Rails 5.1 Gemfile
+  gem 'capybara'
 end
 
 group :development, :test do
@@ -100,7 +100,7 @@ Finished in 1.08 seconds (files took 2.1 seconds to load)
 
 ## Documentation
 
-Visit the [Relish docs](https://relishapp.com/andrii/devise-specs/docs) for all the available features and examples of the generated feature specs.
+Visit the [Relish docs](https://relishapp.com/andrii/devise_specs/docs) for all the available features and examples of the generated feature specs.
 
 ## Output
 

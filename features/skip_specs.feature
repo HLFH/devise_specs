@@ -1,7 +1,7 @@
 Feature: Skip specs
 
   Background:
-    Given I set up devise-specs
+    Given I set up devise_specs
 
   Scenario: running a devise generator with --skip-specs
     When I run `rails generate devise User --skip-specs`
