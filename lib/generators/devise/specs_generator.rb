@@ -14,16 +14,16 @@ module Devise
       def insert_fixture_replacement_attributes
         return if behavior == :revoke
 
-        if fixture_replacement == :factory_girl
-          insert_factory_girl_attributes
+        if fixture_replacement == :factory_bot
+          insert_factory_bot_attributes
         elsif fixture_replacement == :fabrication
           insert_fabrication_attributes
         end
       end
 
-      def create_factory_girl_config_file
-        if fixture_replacement == :factory_girl
-          template 'factory_girl.rb', 'spec/support/factory_girl.rb'
+      def create_factory_bot_config_file
+        if fixture_replacement == :factory_bot
+          template 'factory_bot.rb', 'spec/support/factory_bot.rb'
         end
       end
 
