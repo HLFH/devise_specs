@@ -3,7 +3,7 @@ Feature: With factories
   Background:
     Given I set up devise-specs
 
-  Scenario: running a devise generator with Factory Girl installed
+  Scenario: running a devise generator with Factory Bot installed
     Given I install factory_bot_rails
     When I run `rails generate devise User`
     Then the output should contain:

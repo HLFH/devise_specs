@@ -3,7 +3,7 @@ Feature: Delete specs
   Background:
     Given I set up devise-specs
 
-  Scenario: undo changes with Factory Girl installed
+  Scenario: undo changes with Factory Bot installed
     Given I install factory_bot_rails
     When I run `rails destroy devise User`
     Then the output should contain:
