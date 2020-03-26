@@ -2,8 +2,8 @@ module Devise
   module Generators
     class SpecsGenerator < Rails::Generators::NamedBase
       ATTRIBUTES = %(
-        email 'username@example.com'
-        password 'password')
+        email { 'username@example.com' }
+        password { 'password' })
 
       source_root File.expand_path("../templates", __FILE__)
 
