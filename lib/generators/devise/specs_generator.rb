@@ -51,7 +51,7 @@ module Devise
         Rails.application.config.generators.rails[:fixture_replacement]
       end
 
-      def insert_factory_girl_attributes
+      def insert_factory_bot_attributes
         path  = "spec/factories/#{plural_name}.rb"
         attrs = ATTRIBUTES.gsub(/^ {4}/, '')
         after = "factory :#{singular_name} do"
