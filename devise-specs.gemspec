@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.license  = 'MIT'
   s.files    = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(spec|features|fixtures)/}) }
   
-  s.required_ruby_version = '>= 2.7.0'
+  s.required_ruby_version = '>= 2.6.5'
 
   s.add_runtime_dependency 'devise', '~> 4.7', '>= 4.7.1'
 
