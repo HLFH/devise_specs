@@ -1,7 +1,7 @@
 Feature: With fabricators
 
   Background:
-    Given I set up devise-specs
+    Given I set up devise_specs
 
   Scenario: running a devise generator with Fabrication installed
     Given I install fabrication

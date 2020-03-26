@@ -1,7 +1,7 @@
 Feature: Delete specs
 
   Background:
-    Given I set up devise-specs
+    Given I set up devise_specs
 
   Scenario: undo changes with Factory Bot installed
     Given I install factory_bot_rails

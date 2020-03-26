@@ -4,7 +4,7 @@ Given(/^I set up devise\-specs$/) do
 
   append_to_file 'Gemfile', <<~RUBY
     gem 'devise'
-    gem 'devise-specs', path: '../..'
+    gem 'devise_specs', path: '../..'
     gem 'rspec-rails'
   RUBY
 
