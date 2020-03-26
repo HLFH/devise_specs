@@ -4,14 +4,14 @@ Feature: With factories
     Given I set up devise-specs
 
   Scenario: running a devise generator with Factory Girl installed
-    Given I install factory_girl_rails
+    Given I install factory_bot_rails
     When I run `rails generate devise User`
     Then the output should contain:
       """
             invoke  specs
               gsub    spec/rails_helper.rb
             insert    spec/factories/users.rb
-            create    spec/support/factory_girl.rb
+            create    spec/support/factory_bot.rb
             create    spec/support/devise.rb
             create    spec/features/user_signs_up_spec.rb
             create    spec/features/user_signs_in_spec.rb

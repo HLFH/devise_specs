@@ -4,7 +4,7 @@ Feature: Specs pass
     Given I set up devise-specs
 
   Scenario: specs pass with Factory Girl installed
-    Given I install factory_girl_rails
+    Given I install factory_bot_rails
       And I run `rails generate devise Member`
       And I set up devise
     When I run `bundle exec rspec spec/features`

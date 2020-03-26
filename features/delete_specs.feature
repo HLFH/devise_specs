@@ -4,12 +4,12 @@ Feature: Delete specs
     Given I set up devise-specs
 
   Scenario: undo changes with Factory Girl installed
-    Given I install factory_girl_rails
+    Given I install factory_bot_rails
     When I run `rails destroy devise User`
     Then the output should contain:
       """
             invoke  specs
-            remove    spec/support/factory_girl.rb
+            remove    spec/support/factory_bot.rb
             remove    spec/support/devise.rb
             remove    spec/features/user_signs_up_spec.rb
             remove    spec/features/user_signs_in_spec.rb

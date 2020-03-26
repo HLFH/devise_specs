@@ -29,7 +29,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'factory_girl_rails' # or: gem 'fabrication'
+  gem 'factory_bot_rails' # or: gem 'fabrication'
 end
 ```
 
@@ -71,7 +71,7 @@ $ rails generate devise User
       invoke  specs
         gsub    spec/rails_helper.rb
       insert    spec/factories/users.rb
-      create    spec/support/factory_girl.rb
+      create    spec/support/factory_bot.rb
       create    spec/support/devise.rb
       create    spec/features/user_signs_up_spec.rb
       create    spec/features/user_signs_in_spec.rb
@@ -116,7 +116,7 @@ Adds `email` and `password` attributes to the fabricator.
 
 Adds `email` and `password` attributes to the factory.
 
-`create    spec/support/factory_girl.rb`
+`create    spec/support/factory_bot.rb`
 
 Includes `FactoryGirl::Syntax::Methods` into RSpec config to avoid prefacing Factory Girl methods with `FactoryGirl`.
 
