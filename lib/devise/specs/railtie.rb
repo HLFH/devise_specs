@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Devise
   module Specs
     class Railtie < Rails::Railtie

@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 Then /^the example(?:s)? should(?: all)? pass$/ do
-  step %q{the output should contain "0 failures"}
-  step %q{the output should not contain "0 examples"}
-  step %q{the exit status should be 0}
+  step 'the output should contain "0 failures"'
+  step 'the output should not contain "0 examples"'
+  step 'the exit status should be 0'
 end
