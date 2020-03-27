@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Devise
   module Generators
     class SpecsGenerator < Rails::Generators::NamedBase
@@ -5,7 +7,7 @@ module Devise
         email { 'username@example.com' }
         password { 'password' })
 
-      source_root File.expand_path("../templates", __FILE__)
+      source_root File.expand_path('templates', __dir__)
 
       def require_supporting_files
         uncomment_lines 'spec/rails_helper.rb', /spec.support.*rb.*require/

@@ -11,7 +11,7 @@ feature '<%= human_name %> signs up' do
 
     expect(page).to have_text 'Welcome! You have signed up successfully.'
     expect(page).to have_link 'Sign Out'
-    expect(page).to have_current_path root_path
+    expect(page).to have_current_path authenticated_root_path
   end
 
   scenario 'with invalid data' do

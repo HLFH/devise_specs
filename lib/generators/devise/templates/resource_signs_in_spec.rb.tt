@@ -16,7 +16,7 @@ feature '<%= human_name %> signs in' do
 
     expect(page).to have_text 'Signed in successfully.'
     expect(page).to have_link 'Sign Out'
-    expect(page).to have_current_path root_path
+    expect(page).to have_current_path authenticated_root_path
   end
 
   scenario 'with invalid credentials' do

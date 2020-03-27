@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Given(/^I set up devise\-specs$/) do
   run_simple 'gem install rails -N'
   run_simple 'rails new . --skip-spring'
