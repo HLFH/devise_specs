@@ -54,9 +54,9 @@ config.action_mailer.default_url_options = { host: 'localhost', port: 3001 }
 Add the authentication links to the layout, `user_signed_in?` should be `admin_signed_in?` if your Devise model is `Admin`:
 ```erb
 <% if user_signed_in? %>
-  <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 <% else %>
-  <%= link_to 'Sign In', new_user_session_path %>
+  <%= link_to 'Sign in', new_user_session_path %>
   <%= link_to 'Sign Up', new_user_registration_path %>
 <% end %>
 ```

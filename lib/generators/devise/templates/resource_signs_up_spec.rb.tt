@@ -10,7 +10,7 @@ feature '<%= human_name %> signs up' do
     click_button 'Sign up'
 
     expect(page).to have_text 'Welcome! You have signed up successfully.'
-    expect(page).to have_link 'Sign Out'
+    expect(page).to have_link 'Sign out'
     expect(page).to have_current_path authenticated_root_path
   end
 
@@ -21,6 +21,6 @@ feature '<%= human_name %> signs up' do
 
     expect(page).to have_text "Email can't be blank"
     expect(page).to have_text "Password can't be blank"
-    expect(page).to have_no_link 'Sign Out'
+    expect(page).to have_no_link 'Sign out'
   end
 end

@@ -31,7 +31,7 @@ Feature: With fabricators
           click_button 'Sign up'
 
           expect(page).to have_text 'Welcome! You have signed up successfully.'
-          expect(page).to have_link 'Sign Out'
+          expect(page).to have_link 'Sign out'
           expect(page).to have_current_path root_path
         end
 
@@ -42,7 +42,7 @@ Feature: With fabricators
 
           expect(page).to have_text "Email can't be blank"
           expect(page).to have_text "Password can't be blank"
-          expect(page).to have_no_link 'Sign Out'
+          expect(page).to have_no_link 'Sign out'
         end
       end
       """
@@ -58,10 +58,10 @@ Feature: With fabricators
 
           fill_in 'Email', with: admin.email
           fill_in 'Password', with: admin.password
-          click_button 'Log in'
+          click_button 'Sign in'
 
           expect(page).to have_text 'Signed in successfully.'
-          expect(page).to have_link 'Sign Out'
+          expect(page).to have_link 'Sign out'
           expect(page).to have_current_path root_path
         end
 
@@ -72,10 +72,10 @@ Feature: With fabricators
 
           fill_in 'Email', with: admin.email
           fill_in 'Password', with: admin.password
-          click_button 'Log in'
+          click_button 'Sign in'
 
           expect(page).to have_text 'Invalid Email or password.'
-          expect(page).to have_no_link 'Sign Out'
+          expect(page).to have_no_link 'Sign out'
         end
       end
       """
@@ -91,10 +91,10 @@ Feature: With fabricators
 
           visit root_path
 
-          click_link 'Sign Out'
+          click_link 'Sign out'
 
           expect(page).to have_text 'Signed out successfully.'
-          expect(page).to have_no_link 'Sign Out'
+          expect(page).to have_no_link 'Sign out'
           expect(page).to have_current_path root_path
         end
       end

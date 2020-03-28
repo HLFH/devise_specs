@@ -12,10 +12,10 @@ feature '<%= human_name %> signs out' do
 
     visit authenticated_root_path
 
-    click_link 'Sign Out'
+    click_link 'Sign out'
 
     expect(page).to have_text 'Signed out successfully.'
-    expect(page).to have_no_link 'Sign Out'
+    expect(page).to have_no_link 'Sign out'
     expect(page).to have_current_path unauthenticated_root_path
   end
 end
