@@ -51,14 +51,132 @@ Configure the Action Mailer URL options for the test environment using the follo
 config.action_mailer.default_url_options = { host: 'localhost', port: 3001 }
 ```
 
-Add the authentication links to the layout, `user_signed_in?` should be `admin_signed_in?` if your Devise model is `Admin`:
+Add the authentication links to the layout in `app/views/layouts/application.html.erb`, `user_signed_in?` should be `admin_signed_in?` if your Devise model is `Admin`:
 ```erb
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p class='notice'><%= notice %></p>
+    <p class='alert'><%= alert %></p>
+    <ul class="hmenu">
+      <%= render 'devise/menu/account_items' %>
+    </ul>
+    <%= yield %>
+  </body>
+  
+```
+
+In `app/views/devise/menu/_account_items.html.erb`, please add:
+```ruby
 <% if user_signed_in? %>
-  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+  <li>
+  <%= link_to('Edit registration', edit_user_registration_path) %>
+  </li>
+  <li>
+  <%= link_to('Sign out', destroy_user_session_path, method: :delete) %>        
+  </li>
 <% else %>
-  <%= link_to 'Sign in', new_user_session_path %>
-  <%= link_to 'Create Account', new_user_registration_path %>
+  <li>
+    <%- if controller_name != 'sessions' %>
+      <%= link_to 'Sign in', new_session_path(resource_name) %>
+    <% end %>
+  </li>
+  <li>
+    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+      <%= link_to 'Create an account', new_registration_path(resource_name) %><br />
+    <% end %>
+  </li>
 <% end %>
+
+```
+
+In `app/views/devise/shared/_links.html.erb`, verify you only have the following: 
+```ruby
+<%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+  <%= link_to 'Forgot your password?', new_password_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks' %>
+  <%= link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name) %><br />
+<% end %>
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
+  <% end %>
+<% end %>
+
+```
+
+In `app/views/devise/sessions/new.html.erb`, add:
+```ruby
+<h2>Sign in</h2>
+
+<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: 'email' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: 'current-password' %>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="field">
+      <%= f.check_box :remember_me %>
+      <%= f.label :remember_me %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit 'Sign in' %>
+  </div>
+<% end %>
+
+<%= render 'devise/shared/links' %>
+
+```
+
+In `app/views/devise/registrations/new.html.erb`, add:
+```ruby
+<h2>Create your Account</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render 'devise/shared/error_messages', resource: resource %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: 'email' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: 'new-password' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: 'new-password' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Create Account' %>
+  </div>
+<% end %>
+
+<%= render 'devise/shared/links' %>
+
 ```
 
 ## Usage
@@ -93,13 +211,14 @@ Make sure the specs pass:
 $ rspec spec/features
 .........
 
-Finished in 1.08 seconds (files took 2.1 seconds to load)
+Finished in 0.93371 seconds (files took 1.88 seconds to load)
 9 examples, 0 failures
+
 ```
 
 ## Documentation
 
-Visit the [Relish docs](https://relishapp.com/andrii/devise_specs/docs) for all the available features and examples of the generated feature specs.
+Visit the [Relish docs](https://relishapp.com/andrii/devise_specs/docs) for all the available features and legacy examples of the generated feature specs.
 
 ## Output
 
