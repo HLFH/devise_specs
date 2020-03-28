@@ -38,12 +38,12 @@ and then run `bundle install`.
 
 Generate the RSpec configuratoin files:
 ```
-$ rails generate rspec:install
+$ bundle exec rails generate rspec:install
 ```
 
 Generate the Devise configuration files and follow the setup instructions to define the default url options, root route and flash messages:
 ```
-$ rails generate devise:install
+$ bundle exec rails generate devise:install
 ```
 
 Configure the Action Mailer URL options for the test environment using the following line in `config/environments/test.rb`:
@@ -65,7 +65,7 @@ Add the authentication links to the layout, `user_signed_in?` should be `admin_s
 
 Specs are created automatically when you generate a Devise model, e.g. `User`:
 ```
-$ rails generate devise User
+$ bundle exec rails generate devise User
          ...
       invoke  specs
         gsub    spec/rails_helper.rb
@@ -80,7 +80,7 @@ $ rails generate devise User
 
 If a Devise model is already present, run the `devise:specs` generator directly:
 ```
-$ rails generate devise:specs User
+$ bundle exec rails generate devise:specs User
 ```
 
 Run the migrations:
