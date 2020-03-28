@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version  = '0.0.7'
   s.authors  = ["Gaspard d'Hautefeuille"]
   s.email    = 'ruby@dhautefeuille.eu'
-  s.summary  = 'Drop-in upgrade of legacy devise-specs gem. Generates the Devise acceptance tests for Rails 6+.'
+  s.summary  = 'Upgrade that generates the Devise acceptance tests for Rails 6+'
   s.homepage = 'https://github.com/HLFH/devise_specs'
   s.license  = 'MIT'
   s.files    = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(spec|features|fixtures)/}) }
