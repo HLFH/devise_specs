@@ -57,7 +57,7 @@ Add the authentication links to the layout, `user_signed_in?` should be `admin_s
   <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
 <% else %>
   <%= link_to 'Sign in', new_user_session_path %>
-  <%= link_to 'Sign Up', new_user_registration_path %>
+  <%= link_to 'Create Account', new_user_registration_path %>
 <% end %>
 ```
 
