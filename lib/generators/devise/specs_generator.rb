@@ -54,19 +54,21 @@ module Devise
       end
 
       def insert_factory_bot_attributes
+        frozen = "# frozen_string_literal: true\n\n"
         path  = "spec/factories/#{plural_name}.rb"
-        attrs = "#{ATTRIBUTES.gsub(/^ {4}/, '')}\n  end\nend"
+        attrs = "#{ATTRIBUTES.gsub(/^ {4}/, '')}\n  end\nend\n"
         data = "FactoryBot.define do\n  factory :#{singular_name} do"
 
-        create_file path, data + attrs
+        create_file path, frozen + data + attrs
       end
 
       def insert_fabrication_attributes
+        frozen = "# frozen_string_literal: true\n\n"
         path  = "spec/fabricators/#{singular_name}_fabricator.rb"
-        attrs = "#{ATTRIBUTES.gsub(/^ {6}/, '')}\nend"
+        attrs = "#{ATTRIBUTES.gsub(/^ {6}/, '')}\nend\n"
         after = "Fabricator(:#{singular_name}) do"
 
-        create_file path, data + attrs
+        create_file path, frozen + data + attrs
       end
     end
   end
