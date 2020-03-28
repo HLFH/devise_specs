@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name     = 'devise_specs'
-  s.version  = '0.0.6'
+  s.version  = '0.0.7'
   s.authors  = ["Gaspard d'Hautefeuille"]
   s.email    = 'ruby@dhautefeuille.eu'
   s.summary  = 'Drop-in upgrade of legacy devise-specs gem. Generates the Devise acceptance tests for Rails 6+.'
