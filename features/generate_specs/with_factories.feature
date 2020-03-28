@@ -20,6 +20,8 @@ Feature: With factories
       """
     And the file "spec/features/user_signs_up_spec.rb" should contain:
       """ruby
+      frozen_string_literal: true
+
       require 'rails_helper'
 
       feature 'User signs up' do
@@ -29,21 +31,21 @@ Feature: With factories
           fill_in 'Email', with: 'username@example.com'
           fill_in 'Password', with: 'password'
           fill_in 'Password confirmation', with: 'password'
-          click_button 'Sign up'
+          click_button 'Create Account'
 
           expect(page).to have_text 'Welcome! You have signed up successfully.'
-          expect(page).to have_link 'Sign Out'
+          expect(page).to have_link 'Sign out'
           expect(page).to have_current_path root_path
         end
 
         scenario 'with invalid data' do
           visit new_user_registration_path
 
-          click_button 'Sign up'
+          click_button 'Create Account'
 
           expect(page).to have_text "Email can't be blank"
           expect(page).to have_text "Password can't be blank"
-          expect(page).to have_no_link 'Sign Out'
+          expect(page).to have_no_link 'Sign out'
         end
       end
       """
@@ -59,10 +61,10 @@ Feature: With factories
 
           fill_in 'Email', with: user.email
           fill_in 'Password', with: user.password
-          click_button 'Log in'
+          click_button 'Sign in'
 
           expect(page).to have_text 'Signed in successfully.'
-          expect(page).to have_link 'Sign Out'
+          expect(page).to have_link 'Sign out'
           expect(page).to have_current_path root_path
         end
 
@@ -73,10 +75,10 @@ Feature: With factories
 
           fill_in 'Email', with: user.email
           fill_in 'Password', with: user.password
-          click_button 'Log in'
+          click_button 'Sign in'
 
           expect(page).to have_text 'Invalid Email or password.'
-          expect(page).to have_no_link 'Sign Out'
+          expect(page).to have_no_link 'Sign out'
         end
       end
       """
@@ -92,10 +94,10 @@ Feature: With factories
 
           visit root_path
 
-          click_link 'Sign Out'
+          click_link 'Sign out'
 
           expect(page).to have_text 'Signed out successfully.'
-          expect(page).to have_no_link 'Sign Out'
+          expect(page).to have_no_link 'Sign out'
           expect(page).to have_current_path root_path
         end
       end
