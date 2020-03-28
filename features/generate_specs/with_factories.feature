@@ -20,7 +20,7 @@ Feature: With factories
       """
     And the file "spec/features/user_signs_up_spec.rb" should contain:
       """ruby
-      # frozen_string_literal: true
+      ## frozen_string_literal: true
 
       require 'rails_helper'
 
@@ -51,7 +51,7 @@ Feature: With factories
       """
     And the file "spec/features/user_signs_in_spec.rb" should contain:
       """ruby
-      # frozen_string_literal: true
+      ## frozen_string_literal: true
 
       require 'rails_helper'
 
@@ -86,7 +86,7 @@ Feature: With factories
       """
     And the file "spec/features/user_signs_out_spec.rb" should contain:
       """ruby
-      # frozen_string_literal: true
+      ## frozen_string_literal: true
 
       require 'rails_helper'
 
@@ -108,8 +108,8 @@ Feature: With factories
       """
     And the file "spec/features/user_resets_password_spec.rb" should contain:
       """ruby
-      # frozen_string_literal: true
-      
+      ## frozen_string_literal: true
+
       require 'rails_helper'
 
       feature 'User resets a password' do
