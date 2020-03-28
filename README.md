@@ -1,5 +1,7 @@
 # devise_specs
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/711148d0ea721811f6f9/maintainability)](https://codeclimate.com/github/HLFH/devise_specs/maintainability)
+
 Drop-in upgrade of legacy `devise-specs` gem.
 
 `devise_specs` is a Rails generator that adds the Devise authentication acceptance tests when you run the `devise` generator. The tests are RSpec feature specs containing Factory Bot or Fabrication fixture replacement methods and Capybara actions.
