@@ -179,6 +179,24 @@ In `app/views/devise/registrations/new.html.erb`, add:
 
 ```
 
+Don't forget to add a bit of style for Webpacker in `app/javascript/src/application.scss`:
+```scss
+ul.hmenu {
+  list-style: none;
+  margin: 0 0 2em;
+  padding: 0;
+
+  li {
+    display: inline;
+  }
+}
+```
+
+And add in `app/javascript/packs/application.js`:
+```js
+import '../src/application.scss'
+```
+
 ## Usage
 
 Specs are created automatically when you generate a Devise model, e.g. `User`:
