@@ -1,6 +1,7 @@
 # devise_specs
 [![Build Status](https://travis-ci.org/HLFH/devise_specs.svg?branch=master)](https://travis-ci.org/HLFH/devise_specs)
 [![Maintainability](https://api.codeclimate.com/v1/badges/711148d0ea721811f6f9/maintainability)](https://codeclimate.com/github/HLFH/devise_specs/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/711148d0ea721811f6f9/test_coverage)](https://codeclimate.com/github/HLFH/devise_specs/test_coverage)
 
 Drop-in upgrade of legacy `devise-specs` gem.
 
